@@ -30,7 +30,7 @@ function Check(username) {
       if(data.rowCount<1) throw "no friends";
       var friends = data.rows.reduce((acc, row)=>{
         console.log(row)
-        row.friend1 === username  ? row.push(row.friend2) : acc.push(row.friend1);
+        row.friend1 === username? row.push(row.friend2) : acc.push(row.friend1);
         return acc;
       }, [])
       return friends
