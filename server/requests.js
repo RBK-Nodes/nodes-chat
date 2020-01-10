@@ -16,7 +16,6 @@ function findUser(req, res) {
       }
     })
     .catch(err => {
-      console.log(err);
       res.send("error");
     });
 }
@@ -36,11 +35,9 @@ function getAllRequests(req, res) {
   var username = req.body.username;
   Pending.Fetch(username)
     .then(data => {
-      console.log(data);
       res.send(data);
     })
     .catch(err => {
-      console.log(err);
       res.send("opps! something went wrong");
     });
 }
@@ -50,11 +47,9 @@ function sendRequest(req, res) {
   var target = req.body.target;
   Pending.Send(requester, target)
     .then(data => {
-      console.log("success");
       res.send("success");
     })
     .catch(err => {
-      console.log(err);
       res.send("friend request was sent");
     });
 }
