@@ -3,7 +3,7 @@ function handler(socket) {
         socket.join(room)
     })
 
-    socket.on('message', (data)=>{
+    socket.on('message', ({user, chatid, text})=>{
         //save to DB
         //emit to all in room
     })

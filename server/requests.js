@@ -12,7 +12,7 @@ function findUser(req, res) {
       if (data.rowCount > 0) {
         res.send(username);
       } else {
-        res.send("Notvalid");
+        res.status(400).send();
       }
     })
     .catch(err => {
@@ -23,7 +23,7 @@ function findUser(req, res) {
 
 function getAllFriends(req, res) {
   var username = req.body.username;
-  Friend.CheckFriends(username)
+  Friend.Check(username)
     .then(data => {
       res.send(data);
     })
