@@ -40,3 +40,11 @@ function getChat(req, res) {
     //find all messages with chatroom id
     //return chatroom id and array of messages
 }
+module.exports = {
+    searchUser,
+    getAllFriends,
+    sendRequest,
+    approveRequest,
+    rejectRequest,
+    getChat
+}
