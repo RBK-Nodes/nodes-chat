@@ -11,7 +11,6 @@ function middleware(req, res, next) {
 }
 
 function socketMiddleware(socket, next) {
-    console.log(socket.handshake.query.authorization)
     const token = socket.handshake.query['authorization'].replace('bearer ', '');
     try {
         jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
