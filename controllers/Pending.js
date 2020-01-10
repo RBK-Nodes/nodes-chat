@@ -1,9 +1,5 @@
 const PendingModel = require("../models/Pending");
-/*
-module.exports.SendFriendRequest = SendFriendRequest;
-module.exports.CheckFriendRequest = CheckFriendRequest;
-module.exports.DeleteFriendRequest = DeleteFriendRequest;
- */
+
 function Send(requester, target) {
   return PendingModel.SendFriendRequest(requester, target)
     .then(data => {
