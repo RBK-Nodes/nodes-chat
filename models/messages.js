@@ -10,12 +10,14 @@ con.query(MessagesSchema, (err, data) => {
   if (err) console.error(err);
   else console.log("messages Table IS UP");
 });
+//######################################################## send a message to messages table
 
 function sendMessage(user, text, chatroom_id) {
   return con.query(
     `INSERT into messages (username,text,chatroom_id) VALUES ('${user}', '${text}', '${chatroom_id}')`
   );
 }
+//######################################################## get all messages of specific room 
 
 function checkMessage(chatroom_id) {
   return con.query(
