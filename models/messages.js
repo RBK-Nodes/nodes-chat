@@ -13,7 +13,7 @@ con.query(MessagesSchema, (err, data) => {
 
 function sendMessage(user, text, chatroom_id) {
   return con.query(
-    `INSERT into messages (username,text,chatroom_id) VALUES ('${user}', '${data}', '${chatroom_id}')`
+    `INSERT into messages (username,text,chatroom_id) VALUES ('${user}', '${text}', '${chatroom_id}')`
   );
 }
 
