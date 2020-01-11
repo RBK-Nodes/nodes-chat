@@ -13,6 +13,7 @@ conn.query(userSchema, (err, data) => {
 });
 
 //User functionality
+//######################################################## get user from database 
 
 function getUser(username) {
   return conn.query(`SELECT * FROM users WHERE username = $1`, [username]);
