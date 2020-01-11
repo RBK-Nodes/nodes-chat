@@ -47,10 +47,5 @@ var server = http.listen(port, () => {
 //OK
 var socket = require('socket.io');
 var io = socket(server);
-io.on('connection', (socket) => {
-
-  sockethandler.handler(socket)
-
-
-});
+io.on('connection', sockethandler);
 //

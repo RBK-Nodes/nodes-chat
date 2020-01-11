@@ -1,8 +1,8 @@
 const messagesModel = require("../models/messages");
 
-function Send(data, chatroom_id) {
+function Send(user, text, chatroom) {
   return messagesModel
-    .sendMessage(data, chatroom_id)
+    .sendMessage(user, text, chatroom)
     .then(data => {
       return data;
     })
