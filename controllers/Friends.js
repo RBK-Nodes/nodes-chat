@@ -27,11 +27,11 @@ function MakeFriends(friend1, friend2) {
 function Check(username) {
   return FriendsModel.CheckFriends(username)
     .then(data => {
-      if(data.rowCount<1) throw [];
-      var friends = data.rows.reduce((acc, row)=>{
-        if(row.friend1 === username) 
-          acc.push(row.friend2) 
-        else 
+      if (data.rowCount < 1) throw [];
+      var friends = data.rows.reduce((acc, row) => {
+        if (row.friend1 === username)
+          acc.push(row.friend2)
+        else
           acc.push(row.friend1);
         return acc;
       }, [])
@@ -39,7 +39,7 @@ function Check(username) {
     })
     .catch((err) => {
       throw err;
-    }); 
+    });
 }
 
 module.exports.Make = Make;

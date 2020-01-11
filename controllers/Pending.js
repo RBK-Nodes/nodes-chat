@@ -16,7 +16,7 @@ function Send(requester, target) {
 function Fetch(username) {
   return PendingModel.CheckFriendRequest(username)
     .then(data => {
-      return data.rows.map(row=>row.requester);
+      return data.rows.map(row => row.requester);
     })
     .catch(err => {
       throw err;

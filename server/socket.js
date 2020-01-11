@@ -1,11 +1,16 @@
-function handler(socket) {
-    socket.on('room', (room)=>{
+const messages = require("../controllers/messages");
+
+function handler(socket, cb) {
+    socket.on('room', (room) => {
         socket.join(room)
     })
 
-    socket.on('message', ({user, chatid, text})=>{
+    socket.on('message', ({ user, chatid, text }) => {
         //save to DB
         //emit to all in room
+
+        socket.emit('message', { user, chatid, text });
+        messages.Send(text, chatid)
     })
 }
 
