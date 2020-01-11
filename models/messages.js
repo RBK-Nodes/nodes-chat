@@ -1,7 +1,8 @@
 const con = require("../db/db");
 
 const MessagesSchema = `CREATE TABLE IF NOT EXISTS messages(
-   data VARCHAR(255),
+    text VARCHAR(255),
+    username VARCHAR(255),
     date DATE NOT NULL DEFAULT CURRENT_DATE,
     chatroom_id INTEGER NOT NULL
 )`;
@@ -10,9 +11,9 @@ con.query(MessagesSchema, (err, data) => {
   else console.log("messages Table IS UP");
 });
 
-function sendMessage(data, chatroom_id) {
+function sendMessage(user, text, chatroom_id) {
   return con.query(
-    `INSERT into messages (data,chatroom_id) VALUES ('${data}', '${chatroom_id}')`
+    `INSERT into messages (username,text,chatroom_id) VALUES ('${user}', '${data}', '${chatroom_id}')`
   );
 }
 
