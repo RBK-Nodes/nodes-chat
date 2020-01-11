@@ -27,7 +27,7 @@ function MakeFriends(friend1, friend2) {
 function Check(username) {
   return FriendsModel.CheckFriends(username)
     .then(data => {
-      if(data.rowCount<1) throw "no friends";
+      if(data.rowCount<1) throw [];
       var friends = data.rows.reduce((acc, row)=>{
         if(row.friend1 === username) 
           acc.push(row.friend2) 
