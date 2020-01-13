@@ -2,7 +2,7 @@
   "name": "nodes-chat",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/server.js"
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Malik-Altawati/nodes-chat#readme",
   "dependencies": {
+    "axios": "^0.19.1",
     "bufferutil": "^4.0.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
