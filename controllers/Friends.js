@@ -1,5 +1,5 @@
 const FriendsModel = require("../models/Friends");
-
+//######################################################## this takes  2 users and passes them to the function that checks if two are already friends in friends table 
 function Make(friend1, friend2) {
   return FriendsModel.CheckIfFriends(friend1, friend2)
     .then(data => {
@@ -13,7 +13,7 @@ function Make(friend1, friend2) {
       throw err;
     });
 }
-
+//####################################################### this takes  2 users and passes them to the function that makes them friends in the friends table 
 function MakeFriends(friend1, friend2) {
   return FriendsModel.MakeFriends(friend1, friend2)
     .then(() => {
@@ -23,7 +23,7 @@ function MakeFriends(friend1, friend2) {
       throw err;
     });
 }
-
+//####################################################### this takes  a username and returns all friends of a users
 function Check(username) {
   return FriendsModel.CheckFriends(username)
     .then(data => {
